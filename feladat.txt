@@ -15,6 +15,21 @@ de a webes frontend image-t a compose parancs kiadása után, egy dedikált Dock
 A teljes feladat forrásfájljai, a szolgáltatás logikáját jól leírja ez a hivatkozás: https://docs.docker.com/compose/gettingstarted/
 
 A házi feladathoz módosítani kell a suhard/compose github repóban megadott mintafeladat.
-1. Ne a compose létrehozásakor fordítsa a Dockerfile-t, hanem előre buildeljétek azt és töltsétek fel a saját Docker registrybe.
-2. Defineáljatok és asználjatok saját hálózatot a compose.yaml-ban.
-3. Teszteljétek a rendszert, dokumentáljátok a lépéseket.
+ - ne a compose létrehozásakor fordítsa a Dockerfile-t, hanem előre buildeljétek azt és töltsétek fel a saját Docker registrybe
+ - defineáljatok és asználjatok saját hálózatot a compose.yaml-ban
+ - teszteljétek a rendszert, dokumentáljátok a lépéseket
+
+A feladat lépései: 
+------------------------
+1. Ellenőrizzétek, hogy a docker compose funkciója telepítve van-e (a 23-as Docker verzió esetében váratóan igen).
+  docker compose version
+2. Klónozzátok a Docker compose minta programjait: 
+    git clone https://github.com/suhard/compose.git 
+3. Ellenőrizzétek, hogy a portok szabadok (8090, 6379)
+4. Ellenőrizzétek, hogy minden jól működik-e! Azaz teszteljétek a fenti compose példát. Ki kell adni a "docker compose up -d" parancsot. A "-d" kapcsoló miatt "detached" módban indul a webszerver, így gyorsan tudjátok tesztelni (curl localhost:8090).
+7. Állítsátok le a példát (docker compose down).
+8. A "web" konténer image-t (képfájlját) építsétek meg külön, Docker Compose nélkül! Ehhez a "docker build ." parancsot használjátok. Azután töltsétek fel ezt a képfájlt a saját Docker registry fiókotokba!
+9. Írjátok át a compose.yaml fájlt úgy, hogy ne compose közben build-elje az képfájlt, hanem az előbbi pontban feltöltött képfájlt használja a Docker registry-tekből. Azaz a "web" részben a "build" direktívát helyettesítsétek az "image" direktívával (mintaként a "redis" részt kövessétek).
+10. Ellenőrizzétek, hogy működik a megoldásotok (ld. 5. pont).
+11. Nézzétek meg, milyen hálózatot használ a web és a redis konténer.
+
