@@ -8,7 +8,9 @@ A szolgáltatás helyes működése érdekében a web frontendnek tudnia kell a 
 
 A két konténer közti elérést ti kell megoldanotok! 
 
-A „szolgáltatás” futtatásához szükség lesz a két képfájlra (image), amelyekből létre lehet hozni a 2 konténert. A redis image-ként a standard DockerHub-on elérhető image-t használunk, de a webes frontend image-t a compose parancs kiadása után, egy dedikált Dockerfile alapján hozza létre a rendszer.
+A „szolgáltatás” futtatásához szükség lesz a két képfájlra (image), amelyekből létre lehet hozni a 2 konténert. 
+A redis image-ként a standard DockerHub-on elérhető image-t használunk, 
+de a webes frontend image-t a compose parancs kiadása után, egy dedikált Dockerfile alapján hozza létre a rendszer.
 
 A teljes feladat forrásfájljai, a szolgáltatás logikáját jól leírja ez a hivatkozás: https://docs.docker.com/compose/gettingstarted/
 
