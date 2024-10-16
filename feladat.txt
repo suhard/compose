@@ -1,0 +1,18 @@
+Compose feladat
+
+A "szolgáltatás" működése során egy Flask környezetben megírt egyszerű alkalmazás fogadja a beérkezett kéréseket és válaszként megadja, 
+hogy hányszor hívták meg. Az egyetlen állapotváltozó (a lekérdezések száma) egy külön Redis adatbázisban van nyilvántartva. 
+
+A példában a "web frontend" és az "adatbázis backend" két külön konténerben fut, ez a két konténer a "web" és a "redis". 
+A szolgáltatás helyes működése érdekében a web frontendnek tudnia kell a redis backendről, valamint a két konténer össze kell legyen kötve. 
+
+A két konténer közti elérést ti kell megoldanotok! 
+
+A „szolgáltatás” futtatásához szükség lesz a két képfájlra (image), amelyekből létre lehet hozni a 2 konténert. A redis image-ként a standard DockerHub-on elérhető image-t használunk, de a webes frontend image-t a compose parancs kiadása után, egy dedikált Dockerfile alapján hozza létre a rendszer.
+
+A teljes feladat forrásfájljai, a szolgáltatás logikáját jól leírja ez a hivatkozás: https://docs.docker.com/compose/gettingstarted/
+
+A házi feladathoz módosítani kell a suhard/compose github repóban megadott mintafeladat.
+1. Ne a compose létrehozásakor fordítsa a Dockerfile-t, hanem előre buildeljétek azt és töltsétek fel a saját Docker registrybe.
+2. Defineáljatok és asználjatok saját hálózatot a compose.yaml-ban.
+3. Teszteljétek a rendszert, dokumentáljátok a lépéseket.
