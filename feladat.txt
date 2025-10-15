@@ -16,7 +16,7 @@ A teljes feladat forrásfájljai, a szolgáltatás logikáját jól leírja ez a
 
 A házi feladathoz módosítani kell a suhard/compose github repóban megadott mintafeladat.
  - ne a compose létrehozásakor fordítsa a Dockerfile-t, hanem előre buildeljétek azt és töltsétek fel a saját Docker registrybe
- - defineáljatok és asználjatok saját hálózatot a compose.yaml-ban
+ - defineáljatok és használjatok saját hálózatot a compose.yaml-ban
  - teszteljétek a rendszert, dokumentáljátok a lépéseket
 
 A feladat lépései: 
